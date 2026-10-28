@@ -35,15 +35,48 @@ Example imagery sourced from Unsplash:
 
 Check final licences and replace all illustrative photography with approved brand assets for production.
 
-## Local review
+## Local preview — canonical Caddy/Docker environment
+
+The local preview runs on the Mac's existing Docker `dev` network and the shared
+`digipixel-local-caddy` reverse proxy. Each service has its own automatic Caddy
+labels (hostname, `{{upstreams 80}}` proxy and internal TLS). No other sites,
+Caddy settings, DNS settings or WordPress instances are modified.
 
 From the project root:
 
 ```sh
-python3 -m http.server 8784 --directory docs
+docker compose -f compose.local.yml up -d --wait
 ```
 
-Open `http://127.0.0.1:8784/` and follow the three comparison cards.
+On the local network (with the existing `.digipixel.test` DNS and Caddy certificate trust):
+
+- **Comparison page:** https://digipixel-agency.demo.digipixel.test/
+- **Bold:** https://bold.digipixel-agency.demo.digipixel.test/
+- **Editorial:** https://editorial.digipixel-agency.demo.digipixel.test/
+- **Interactive:** https://interactive.digipixel-agency.demo.digipixel.test/
+
+The hub also serves the three designs under `/bold/`, `/editorial/` and
+`/interactive/`. These paths remain valid when individual sites are opened from
+the comparison page. The direct hosts link back to the comparison page.
+
+Loopback fallback on the Mac (no LAN DNS/TLS needed):
+
+- http://127.0.0.1:8784/ — hub
+- http://127.0.0.1:8785/ — bold
+- http://127.0.0.1:8786/ — editorial
+- http://127.0.0.1:8787/ — interactive
+
+All four containers are isolated, read-only Nginx static sites. External access
+from an iPhone or iPad requires the device to reach the Mac on the same LAN,
+resolve the `.digipixel.test` hostnames and trust the local Caddy certificate.
+
+Stop only this project's previews with:
+
+```sh
+docker compose -f compose.local.yml down
+```
+
+Do not remove the shared `dev` network or the shared Caddy service.
 
 ## Publishing
 

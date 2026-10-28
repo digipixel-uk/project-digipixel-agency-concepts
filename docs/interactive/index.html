@@ -103,4 +103,11 @@ const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('
 const form=document.querySelector('#demo-form'),msg=document.querySelector('#form-result');form.addEventListener('submit',e=>{e.preventDefault();const bad=[...form.querySelectorAll('[required]')].find(el=>!el.checkValidity());if(bad){msg.hidden=false;msg.textContent='Complete the required fields to preview the confirmation.';bad.focus();return}msg.hidden=false;msg.textContent='This is where the live DigiPixel website would confirm your enquiry. No data was sent, saved or recorded.';form.reset()});set('trades');
 })();
 </script>
+<script>
+/* On individual Caddy hostnames, point 'compare all' back to the local preview hub.
+   Keep relative ../ links intact for GitHub Pages and hub subdirectory previews. */
+if (location.hostname.endsWith('.digipixel-agency.demo.digipixel.test')) {
+  document.querySelectorAll('a[href="../"]').forEach(a => a.href = 'https://digipixel-agency.demo.digipixel.test/');
+}
+</script>
 </body></html>

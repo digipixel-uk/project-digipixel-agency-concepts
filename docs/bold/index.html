@@ -78,4 +78,11 @@ section{scroll-margin-top:20px}.section{padding:115px 0}.section-head{display:fl
 <script>
 (()=>{const t=document.querySelector('.menu-toggle'),n=document.querySelector('#nav');t.addEventListener('click',()=>{const open=t.getAttribute('aria-expanded')!=='true';t.setAttribute('aria-expanded',String(open));n.classList.toggle('open',open)});n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{n.classList.remove('open');t.setAttribute('aria-expanded','false')}));document.addEventListener('keydown',e=>{if(e.key==='Escape'){n.classList.remove('open');t.setAttribute('aria-expanded','false')}});const f=document.querySelector('#demo-form'),result=document.querySelector('#demo-result');f.addEventListener('submit',e=>{e.preventDefault();let invalid=[...f.querySelectorAll('[required]')].find(x=>!x.checkValidity());if(invalid){result.hidden=false;result.textContent='Please complete the highlighted fields to preview the confirmation.';invalid.focus();return;}result.hidden=false;result.textContent='This is where a real DigiPixel enquiry confirmation would appear. The preview did not send, store or record anything.';f.reset()})})();
 </script>
+<script>
+/* On individual Caddy hostnames, point 'compare all' back to the local preview hub.
+   Keep relative ../ links intact for GitHub Pages and hub subdirectory previews. */
+if (location.hostname.endsWith('.digipixel-agency.demo.digipixel.test')) {
+  document.querySelectorAll('a[href="../"]').forEach(a => a.href = 'https://digipixel-agency.demo.digipixel.test/');
+}
+</script>
 </body></html>

@@ -1,0 +1,67 @@
+name: digipixel-agency-local-previews
+
+# Independent DigiPixel agency preview environment.
+# Deliberately separate from Pixlwrk and DigiPixel customer template previews.
+x-static-preview: &static-preview
+  image: nginx:stable-alpine
+  restart: unless-stopped
+  networks:
+    - dev
+  healthcheck:
+    test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1/_health"]
+    interval: 15s
+    timeout: 4s
+    retries: 3
+
+services:
+  showcase:
+    <<: *static-preview
+    container_name: digipixel-agency-showcase
+    volumes:
+      - ./docs:/usr/share/nginx/html:ro
+      - ./ops/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    ports: ["127.0.0.1:8784:80"]
+    labels:
+      caddy: "digipixel-agency.demo.digipixel.test"
+      caddy.reverse_proxy: "{{upstreams 80}}"
+      caddy.tls: "internal"
+
+  bold:
+    <<: *static-preview
+    container_name: digipixel-agency-bold
+    volumes:
+      - ./docs/bold:/usr/share/nginx/html:ro
+      - ./ops/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    ports: ["127.0.0.1:8785:80"]
+    labels:
+      caddy: "bold.digipixel-agency.demo.digipixel.test"
+      caddy.reverse_proxy: "{{upstreams 80}}"
+      caddy.tls: "internal"
+
+  editorial:
+    <<: *static-preview
+    container_name: digipixel-agency-editorial
+    volumes:
+      - ./docs/editorial:/usr/share/nginx/html:ro
+      - ./ops/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    ports: ["127.0.0.1:8786:80"]
+    labels:
+      caddy: "editorial.digipixel-agency.demo.digipixel.test"
+      caddy.reverse_proxy: "{{upstreams 80}}"
+      caddy.tls: "internal"
+
+  interactive:
+    <<: *static-preview
+    container_name: digipixel-agency-interactive
+    volumes:
+      - ./docs/interactive:/usr/share/nginx/html:ro
+      - ./ops/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    ports: ["127.0.0.1:8787:80"]
+    labels:
+      caddy: "interactive.digipixel-agency.demo.digipixel.test"
+      caddy.reverse_proxy: "{{upstreams 80}}"
+      caddy.tls: "internal"
+
+networks:
+  dev:
+    external: true
