@@ -1,0 +1,92 @@
+/*
+ * DigiPixel brand skin for the approved BOLD agency concept.
+ * Source of truth: digipixel.uk live brand 28 Oct 2026.
+ * Real DigiPixel logo: ./digipixel-logo.png (unchanged copy)
+ * Type: Inter. Colours: navy #0b1728, cyan #03c6fc,
+ * paper #f4f4ef, pale cyan #b9f1ff, dark blue #10243d.
+ *
+ * The bold art direction, page structure, browser illustration,
+ * copy and conversion journey are deliberately unchanged.
+ */
+:root {
+  --brand-navy:#0b1728;
+  --brand-deep:#10243d;
+  --brand-cyan:#03c6fc;
+  --brand-powder:#b9f1ff;
+  --brand-paper:#f4f4ef;
+}
+body{background:var(--brand-paper);color:var(--brand-navy);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+h1,h2,h3,.btn,.logo,.step .n{font-family:Inter,ui-sans-serif,system-ui,sans-serif}
+.demo{background:#070f1b;color:#d2e3ec}
+.demo a{color:var(--brand-cyan)}
+.header{background:var(--brand-navy);border-bottom:3px solid var(--brand-deep)}
+.logo{font-family:Inter,ui-sans-serif,system-ui,sans-serif;gap:13px;letter-spacing:-.065em;font-size:31px;line-height:1}
+.logo img.brand-symbol{width:55px;height:41px;object-fit:contain;flex:0 0 auto}
+.logo .brand-wordmark{font-weight:900;color:var(--brand-paper);white-space:nowrap}
+.nav{color:var(--brand-paper)}
+.nav a:not(.nav-cta):hover{text-decoration-color:var(--brand-cyan)}
+.nav-cta{background:var(--brand-cyan);color:var(--brand-navy);box-shadow:4px 4px 0 var(--brand-paper)}
+.nav-cta:hover{box-shadow:6px 6px 0 var(--brand-paper)}
+.menu-toggle{color:var(--brand-paper);border-color:var(--brand-cyan)}
+.hero{background:var(--brand-cyan);border-bottom:3px solid var(--brand-navy)}
+.hero h1{color:var(--brand-navy);font-weight:900;letter-spacing:-.087em}
+.hero h1 span{display:inline-block;color:var(--brand-paper);background:var(--brand-navy);padding:.005em .088em .102em;line-height:1.02;transform:rotate(-1.1deg);margin-top:.052em}
+.hero .lead{color:var(--brand-navy);font-weight:500}
+.hero .eyebrow{color:var(--brand-navy)}
+.hero-art:before{background:var(--brand-deep);width:425px;height:425px;top:32px;right:4px}
+.hero-art:after{content:"";position:absolute;width:105px;height:105px;top:-15px;right:-10px;z-index:2;transform:rotate(10deg);border-radius:50%;border:3px solid var(--brand-paper);background:var(--brand-navy) url("./digipixel-logo.png") center/77% no-repeat;filter:drop-shadow(5px 6px 0 rgba(11,23,40,.25))}
+.hero .btn.dark{background:var(--brand-navy);color:var(--brand-paper);box-shadow:6px 6px 0 #fff}
+.hero .btn.dark:hover{box-shadow:8px 8px 0 #fff}
+.hero .btn.light{border-color:var(--brand-navy);color:var(--brand-navy);background:transparent}
+.hero .btn.light:hover{background:var(--brand-paper)}
+.browser{border-color:var(--brand-navy);box-shadow:16px 18px 0 var(--brand-navy)}
+.browser-bar{background:var(--brand-paper);border-color:var(--brand-navy)}
+.browser-dots i{border-color:var(--brand-navy);background:var(--brand-cyan)}
+.browser-dots i:nth-child(2){background:var(--brand-paper)}
+.browser-dots i:nth-child(3){background:var(--brand-powder)}
+.floating{border-color:var(--brand-navy);box-shadow:6px 6px 0 var(--brand-navy)}
+.floating .spark{display:inline-block;width:10px;height:10px;background:var(--brand-cyan);box-shadow:12px 0 var(--brand-navy),0 12px var(--brand-navy),12px 12px var(--brand-cyan);margin:0 28px 12px 0;vertical-align:middle}
+.ticker{background:var(--brand-navy);color:var(--brand-paper);border-bottom:3px solid var(--brand-navy)}
+.ticker-inner b{font-size:24px;font-weight:900;color:var(--brand-cyan)}
+.steps{background:var(--brand-paper)}
+.number{background:var(--brand-navy);color:var(--brand-paper)}
+.step .n{color:var(--brand-navy)}
+.step:nth-child(1){background:white}
+.step:nth-child(2){background:var(--brand-powder)}
+.step:nth-child(3){background:var(--brand-deep);color:var(--brand-paper)}
+.step:nth-child(3) .n{color:var(--brand-cyan)}
+.websites{background:var(--brand-deep);color:var(--brand-paper)}
+.websites .number{background:var(--brand-cyan);color:var(--brand-navy)}
+.websites .section-head p{color:#d5e4ea}
+.type{background:var(--brand-paper);color:var(--brand-navy)}
+.type:nth-child(2){background:white}
+.type:nth-child(3){background:var(--brand-powder)}
+.type-visual .oval{background:var(--brand-cyan)}
+.type:nth-child(2) .oval{background:var(--brand-navy)}
+.type:nth-child(3) .oval{background:white}
+.mini-site{border-color:var(--brand-navy);box-shadow:7px 8px 0 var(--brand-navy)}
+.type-info{border-color:var(--brand-navy)}
+.promise{background:white}
+.promise-item span{color:#006e92}
+.promise-note{background:var(--brand-powder)}
+.contact{background:var(--brand-powder);border-top:3px solid var(--brand-navy)}
+.contact-card{border-color:var(--brand-navy);box-shadow:12px 12px 0 var(--brand-navy)}
+.contact-card input,.contact-card select,.contact-card textarea{border-color:var(--brand-navy);background:white}
+.contact-card .btn.dark{background:var(--brand-navy);color:var(--brand-paper);box-shadow:none}
+.footer{background:var(--brand-navy);color:var(--brand-paper)}
+.footer .tag{color:#c3d2df}
+@media(max-width:780px){
+  .nav{background:var(--brand-navy);border-color:#32475a}
+  .nav a:not(.nav-cta){color:var(--brand-paper)}
+  .hero-art:before{width:370px;height:370px}
+}
+@media(max-width:520px){
+  .logo{gap:8px;font-size:26px}
+  .logo img.brand-symbol{width:43px;height:34px}
+  .hero h1{font-size:clamp(52px,13.7vw,74px);letter-spacing:-.087em}
+  .hero h1 span{padding:.022em .068em .095em}
+  .hero-art:before{width:270px;height:270px}
+  .hero-art:after{width:70px;height:70px;top:-6px;right:0}
+  .browser{box-shadow:8px 9px 0 var(--brand-navy)}
+  .contact-card{box-shadow:6px 6px 0 var(--brand-navy)}
+}

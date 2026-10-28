@@ -6,11 +6,28 @@ Purpose: compare distinctly different approaches for the new affordable web desi
 
 ## Concepts
 
-1. **Bold / The Bold One**: bright yellow and electric blue, giant type, illustrated website mock-up, highly visible calls to action and a simple three-step buying explanation.
+1. **Bold / The Bold One**: vibrant cyan and navy using the existing DigiPixel mark, Inter font and original brand palette; giant type, illustrated website mock-up, highly visible calls to action and a simple three-step buying explanation. This is the favoured direction.
 2. **Editorial / The Refined One**: cream, ink and terracotta, expressive serif typography, photography-led art direction, quiet confidence, relationship-led conversion.
 3. **Interactive / The Digital One**: dark mode, mint and lilac, UI-based presentation, functional website category selector which changes two example layouts, guided enquiry approach.
 
 Each is an accessible, mobile-responsive static HTML prototype located in `docs/<slug>/index.html`. They are intentionally independent design systems and are **not three recolours of one agency template**. `docs/index.html` is an overview with actual screenshot previews.
+
+## Branding reference
+
+The current DigiPixel brand was verified against the live digipixel.uk site
+and its canonical repository (`~/Sites/digipixel-website`) on 28 October 2026.
+The bold design uses the **unchanged original logo** copied from
+`public/brand/digipixel-logo.png` (SHA-1 `ec64c214e527029eb4d23f650f9c615499ff2bfa`),
+the original **Inter** typeface through Google Fonts, and the brand colours:
+
+- Deep navy: `#0B1728`
+- Secondary navy: `#10243D`
+- Cyan: `#03C6FC`
+- Cyan soft: `#B9F1FF`
+- Paper/off-white: `#F4F4EF`
+
+The bold concept retains its original page architecture and sales journey.
+This change does **not** amend the canonical Pixlwrk repository or live website.
 
 ## Boundaries
 
