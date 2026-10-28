@@ -1,0 +1,7 @@
+# Build and review artefacts
+.DS_Store
+node_modules/
+.env
+.env.*
+tests/screenshots/
+*.log
